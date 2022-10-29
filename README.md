@@ -36,6 +36,7 @@ NICE TO HAVES
 - [x] Links added one at a time on creation form
 - [ ] Guest log in system
 - [ ] Allows file directories to be opened (video games?)
+- [ ] Edit page allows single links to be added or deleted
 
 HOME STRETCH
 
