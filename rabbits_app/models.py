@@ -9,8 +9,6 @@ class Rabbit(models.Model):
     user = models.ForeignKey(User,  default=None, on_delete=models.CASCADE)
     links = models.CharField(max_length=99999999)
     title = models.CharField(max_length=15)
-    # color = ColorField(default='#FF0000')
-    date_created = models.DateTimeField(auto_now_add=True, blank=True)
-
+    
     def __str__(self):
-        return f"{self.user} - {self.title} - {self.date_created} - {self.links}"
+        return f"{self.user} - {self.title} - {self.links}"

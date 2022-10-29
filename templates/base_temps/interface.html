@@ -4,17 +4,18 @@
 
 
 <h3>Welcome {{ request.user }} </h3>
+<a href="{% url 'rabbits_app:create_rabbit' %}">Create</a>
 
 
 {% for key, values in rabbit_list.items %}
 
 
 <p id="btn" onclick="openLinks({{values}})">{{key}}</p>
+<a href="{% url 'rabbits_app:edit_rabbit' key %}">Edit</a>
 {% endfor %}
     
 
 <script>
-
         function openLinks(links){
         links.forEach(link =>{
             window.open(link)
