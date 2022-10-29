@@ -29,11 +29,11 @@ MVP
 - [x] Interface layout
 - [x] Button creation
 - [x] Button can be edited
-- [ ] Button can be deleted
+- [x] Button can be deleted
 
 NICE TO HAVES
 
-- [ ] Links added one at a time on creation form
+- [x] Links added one at a time on creation form
 - [ ] Allows file directories to be opened (video games?)
 
 HOME STRETCH
