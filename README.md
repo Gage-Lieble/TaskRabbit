@@ -41,3 +41,5 @@ HOME STRETCH
 - [ ] Begin styling 
 - [ ] Javascript styling
 - [ ] Delpoy? maybe
+
+* It's called "TaskRabbits" because rabbits are quick ;)
