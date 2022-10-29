@@ -4,4 +4,25 @@
 
 
 <h3>Welcome {{ request.user }} </h3>
+
+
+{% for key, values in rabbit_list.items %}
+
+
+<p id="btn" onclick="openLinks({{values}})">{{key}}</p>
+{% endfor %}
+    
+
+<script>
+
+        function openLinks(links){
+        links.forEach(link =>{
+            window.open(link)
+        })
+
+        }
+</script>
+
+    
+
 {% endblock %}

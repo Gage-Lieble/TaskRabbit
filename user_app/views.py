@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from rabbits_app.models import *
 # Create your views here.
 
 def index(request):
@@ -11,7 +12,18 @@ def index(request):
     return render(request, 'base_temps/index.html', )
 
 def interface(request):
-    return render(request, 'base_temps/interface.html')
+    rabbits_model = Rabbit.objects.filter(user=request.user)
+    rabbits = {}
+    for index, link_list in enumerate(rabbits_model):
+        conversion = rabbits_model[index].links.split(',')
+        rabbits[rabbits_model[index].title] = conversion
+    print(rabbits)
+    
+    context = {
+        "rabbit_list": rabbits
+    }
+
+    return render(request, 'base_temps/interface.html', context)
 
 
 def signup(request):
