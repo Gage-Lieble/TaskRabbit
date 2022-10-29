@@ -37,7 +37,7 @@ NICE TO HAVES
 - [x] Guest log in system (pip django-guuest-user)
 - [ ] Allows file directories to be opened (video games?)
 - [x] Edit page allows single links to be added or deleted
-- [ ] Customizable button colors 
+- [x] Customizable button colors 
 
 HOME STRETCH
 
