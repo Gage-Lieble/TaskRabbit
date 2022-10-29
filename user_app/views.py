@@ -6,19 +6,22 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from rabbits_app.models import *
 # Create your views here.
+from guest_user.decorators import allow_guest_user
 
+# @allow_guest_user
 def index(request):
     
     return render(request, 'base_temps/index.html', )
 
+@allow_guest_user
 def interface(request):
     rabbits_model = Rabbit.objects.filter(user=request.user)
     rabbits = {}
     for index, link_list in enumerate(rabbits_model):
         conversion = rabbits_model[index].links.split(',')
-        rabbits[rabbits_model[index].title] = conversion
-    
-    
+        rabbits[rabbits_model[index].title] = [conversion, rabbits_model[index].color]
+        
+    print(rabbits)
     context = {
         "rabbit_list": rabbits
     }

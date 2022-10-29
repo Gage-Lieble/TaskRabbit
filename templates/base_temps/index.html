@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
-
+{% block title %}TaskRabbit{% endblock %}
 {% block content %}
-<h1>Index it works</h1>
+<h1>Task Rabbit</h1>
 
 
 {% if user.is_authenticated %}
@@ -12,7 +12,12 @@
     {% else %}
 
     <a href="{% url 'users_app:signup' %}">signup</a>
+    <br>
+    <br>
     <a href="{% url 'users_app:login' %}">login</a>
+    <br>
+    <br>
+    <a href="{% url 'users_app:interface' %}">Guest login</a>
     
 {% endif %}
     

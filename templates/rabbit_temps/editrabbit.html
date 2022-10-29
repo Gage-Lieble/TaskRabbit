@@ -1,5 +1,6 @@
 {% extends 'rabbitbase.html' %}
 
+{% block title %}TaskRabbit - Edit{% endblock %}
 {% block content %}
 <h3>Rabbit edit</h3>
 
@@ -7,16 +8,17 @@
 <form action="{% url 'rabbits_app:edit_rabbit' model_data.0.title %}" method="POST">
     {% csrf_token %}
     <input type="text" name="title" value="{{model_data.0.title}}">
+    <input type="color" name="color" value="{{color}}">
     
-    <div>
+    <div id="create-form">
         {% for link in links  %}
             <input type="text" name="site-{{forloop.counter}}" value="{{link}}">
         {% endfor %}
-
     </div>
         
     
     <button type="submit">submit</button>
 </form>
+<div id="add_inp" style="background-color: rgb(92, 92, 92);">+</div>
 <a href="{% url 'users_app:interface' %}">Go back</a>
 {% endblock %}

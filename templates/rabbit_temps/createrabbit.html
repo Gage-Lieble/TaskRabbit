@@ -1,11 +1,12 @@
 {% extends 'rabbitbase.html' %}
 
+{% block title %}TaskRabbit - Create{% endblock %}
 {% block content %}
 <h3>Rabbit create</h3>
-<form action="{% url 'rabbits_app:create_rabbit' %}" method="POST">
+<form  action="{% url 'rabbits_app:create_rabbit' %}" method="POST">
 {% csrf_token %}
     {{form}}
-    <div>
+    <div id="create-form">
         <input type="text" name="site-1" placeholder="website" required>
         <input type="text" name="site-2" placeholder="website">
         <input type="text" name="site-3" placeholder="website">
@@ -15,6 +16,7 @@
 
     <button type="submit">Create</button>
 </form>
+<div id="add_inp" style="background-color: rgb(92, 92, 92);">+</div>
 
 <a href="{% url 'users_app:interface' %}">Go back</a>
 {% endblock %}

@@ -9,6 +9,6 @@ class Rabbit(models.Model):
     user = models.ForeignKey(User,  default=None, on_delete=models.CASCADE)
     links = models.CharField(max_length=999999)
     title = models.CharField(max_length=15)
-    
+    color = models.CharField(max_length=15)
     def __str__(self):
-        return f"{self.user} - {self.title} - {self.links}"
+        return f"{self.user} - {self.title} - {self.links} - {self.color}"

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+
+{% block title %}TaskRabbit - Interface{% endblock %}
 {% block content %}
 
 
@@ -13,20 +15,14 @@
 
 {% for key, values in rabbit_list.items %}
 
-
-<p id="btn" onclick="openLinks({{values}})">{{key}}</p>
+<p style="background-color: {{values.1}};" id="btn" onclick="openLinks({{values.0}})">{{key}}</p>
 <a href="{% url 'rabbits_app:edit_rabbit' key %}">Edit</a>
 <a href="{% url 'rabbits_app:delete' key %}">Delete</a>
 {% endfor %}
     
 
 <script>
-        function openLinks(links){
-        links.forEach(link =>{
-            window.open(link)
-        })
-
-        }
+      
 </script>
 
     

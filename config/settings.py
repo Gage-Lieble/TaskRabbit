@@ -41,8 +41,18 @@ INSTALLED_APPS = [
     # my apps
     
     'user_app',
-    'rabbits_app'
+    'rabbits_app',
+
+    # external apps
+    'guest_user',
 ]
+
+AUTHENTICATION_BACKENDS = [
+   "django.contrib.auth.backends.ModelBackend",
+   # it should be the last entry to prevent unauthorized access
+   "guest_user.backends.GuestBackend",
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
