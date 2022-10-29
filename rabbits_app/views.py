@@ -47,8 +47,15 @@ def edit_rabbit(request, name):
         model_data = Rabbit.objects.get(title=name)
         model_data.title = request.POST['title']
 
-        link_list = [request.POST['site-1'],request.POST['site-2'],request.POST['site-3'],request.POST['site-4'],request.POST['site-5']] # Organized form data into list
 
+        link_list = []
+        for sitenum in request.POST:
+            
+            if sitenum[0] =='s':
+                link_list.append(request.POST[sitenum])
+
+
+        print(link_list)
         # Checks to see if any feilds empty
         final_links = ""
         for web in link_list:
@@ -59,7 +66,7 @@ def edit_rabbit(request, name):
                 final_links = final_links[1:]
     
         model_data.links = final_links
-        
+
         model_data.save()
         return HttpResponseRedirect(reverse('users_app:interface'))
 
