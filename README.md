@@ -9,7 +9,8 @@ TaskRabbit is a program where users create buttons that open several websites at
 #### Base/Crucial Features:
 - Buttons that open multiple links on one click
 - Button can be modified 
-- user system
+- User system
+- Interface
 #### Additional/Extra Features:
 - Storage of user saved buttons
 - Button cusomization
