@@ -34,7 +34,7 @@ MVP
 NICE TO HAVES
 
 - [x] Links added one at a time on creation form
-- [ ] Guest log in system
+- [x] Guest log in system (pip django-guuest-user)
 - [ ] Allows file directories to be opened (video games?)
 - [x] Edit page allows single links to be added or deleted
 
