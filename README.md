@@ -5,7 +5,6 @@
 TaskRabbit is a program where users create buttons that open several websites at once. These buttons allow you to start your work day quicker since instead of manually opening your email, slack, zoom, github, etc. you can now use one button to do all of that for you.
 
 ## Features
-Interface allows multiple buttons and customization
 
 #### Base/Crucial Features:
 - Buttons that open multiple links on one click
