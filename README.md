@@ -34,7 +34,7 @@ MVP
 NICE TO HAVES
 
 - [ ] Links added one at a time on creation form
-- [ ] Allows file directories to be opened (video games)
+- [ ] Allows file directories to be opened (video games?)
 
 HOME STRETCH
 
