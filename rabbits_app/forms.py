@@ -7,5 +7,5 @@ class CreateRabbitForm(forms.ModelForm):
     class Meta:
         model = Rabbit
         fields = '__all__'
-        exclude = ['user']
+        exclude = ['user', 'links']
         

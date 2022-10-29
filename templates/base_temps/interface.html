@@ -4,6 +4,9 @@
 
 
 <a href="{% url 'users_app:index' %}">Home</a>
+<br>
+<br>
+<a href="{% url 'users_app:logout' %}">Logout</a>
 <h3>Welcome {{ request.user }} </h3>
 <a href="{% url 'rabbits_app:create_rabbit' %}">Create</a>
 
@@ -13,6 +16,7 @@
 
 <p id="btn" onclick="openLinks({{values}})">{{key}}</p>
 <a href="{% url 'rabbits_app:edit_rabbit' key %}">Edit</a>
+<a href="{% url 'rabbits_app:delete' key %}">Delete</a>
 {% endfor %}
     
 

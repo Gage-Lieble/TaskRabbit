@@ -7,7 +7,15 @@
 <form action="{% url 'rabbits_app:edit_rabbit' model_data.0.title %}" method="POST">
     {% csrf_token %}
     <input type="text" name="title" value="{{model_data.0.title}}">
-    <input type="text" name="links" value="{{model_data.0.links}}">
+    
+    <div>
+        {% for link in links  %}
+            <input type="text" name="site-{{forloop.counter}}" value="{{link}}">
+        {% endfor %}
+
+    </div>
+        
+    
     <button type="submit">submit</button>
 </form>
 <a href="{% url 'users_app:interface' %}">Go back</a>

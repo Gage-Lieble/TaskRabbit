@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Rabbit(models.Model):
     user = models.ForeignKey(User,  default=None, on_delete=models.CASCADE)
-    links = models.CharField(max_length=99999999)
+    links = models.CharField(max_length=999999)
     title = models.CharField(max_length=15)
     
     def __str__(self):

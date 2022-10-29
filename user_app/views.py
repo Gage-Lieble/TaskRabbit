@@ -17,7 +17,7 @@ def interface(request):
     for index, link_list in enumerate(rabbits_model):
         conversion = rabbits_model[index].links.split(',')
         rabbits[rabbits_model[index].title] = conversion
-    print(rabbits)
+    
     
     context = {
         "rabbit_list": rabbits
@@ -70,3 +70,7 @@ def user_login(request):
                 return render(request, 'base_temps/login.html', {'log_form': log_form})
 
     return render(request, 'base_temps/login.html')
+
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('users_app:index'))
