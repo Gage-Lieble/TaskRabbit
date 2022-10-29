@@ -3,6 +3,7 @@
 {% block content %}
 
 
+<a href="{% url 'users_app:index' %}">Home</a>
 <h3>Welcome {{ request.user }} </h3>
 <a href="{% url 'rabbits_app:create_rabbit' %}">Create</a>
 
