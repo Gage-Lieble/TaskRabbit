@@ -41,7 +41,7 @@ NICE TO HAVES
 
 HOME STRETCH
 
-- [ ] Begin styling 
+- [x] Begin styling 
 - [ ] Develop graphics (logos/images)
 - [ ] Javascript styling
 - [ ] Delpoy? maybe
