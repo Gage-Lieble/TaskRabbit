@@ -38,6 +38,7 @@ NICE TO HAVES
 - [ ] Allows file directories to be opened (video games?)
 - [x] Edit page allows single links to be added or deleted
 - [x] Customizable button colors 
+- [ ] Quick view on index based on users button choice
 
 HOME STRETCH
 
