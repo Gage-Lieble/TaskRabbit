@@ -11,16 +11,16 @@
             <h1>TASK</h1>
         </div>
     </div>
-<!--     
-    <div id="github-wrap">
-        <a id="git-logo" href="https://github.com/Gage-Lieble/TaskRabbit"><img  src="{% static 'imgs/github.svg' %}" alt=""></a>
-    </div> -->
+    
+    
+    <a id="github-wrap" style="z-index: 2;" href="https://github.com/Gage-Lieble/TaskRabbit"><img src="{% static 'imgs/github.svg' %}" alt=""></a>
+ 
     
     {% if user.is_authenticated %}
     <div class="btn-wrap">
     <a class="index-btn" href="{% url 'users_app:interface' %}">INTERFACE</a>
     <a class="index-btn" href="{% url 'users_app:logout' %}">LOGOUT</a>
-    <a class="index-btn" href="https://github.com/Gage-Lieble/TaskRabbit">GITHUB</a>
+    <a class="index-btn" href="https://www.gagelieble.com/">PORTFOLIO</a>
     </div>
         
         {% else %}

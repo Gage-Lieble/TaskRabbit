@@ -24,3 +24,6 @@ addInpBtn.addEventListener('click', () =>{
 
 })
 
+
+
+

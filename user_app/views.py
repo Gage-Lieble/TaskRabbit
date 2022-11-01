@@ -21,7 +21,7 @@ def interface(request):
         conversion = rabbits_model[index].links.split(',')
         rabbits[rabbits_model[index].title] = [conversion, rabbits_model[index].color]
         
-    print(rabbits)
+    
     context = {
         "rabbit_list": rabbits
     }

@@ -61,7 +61,7 @@ def edit_rabbit(request, name):
                 link_list.append(request.POST[sitenum])
 
 
-        print(link_list)
+    
         # Checks to see if any feilds empty
         final_links = ""
         for web in link_list:

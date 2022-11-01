@@ -4,26 +4,39 @@
 {% block title %}TaskRabbit - Interface{% endblock %}
 {% block content %}
 
+<div id="greet-title">
+    <h3 class="head-word">GREETINGS </h3>
+    <h1 class="head-word">{{ request.user }}</h1>
+</div>
 
-<a href="{% url 'users_app:index' %}">Home</a>
-<br>
-<br>
-<a href="{% url 'users_app:logout' %}">Logout</a>
-<h3>Welcome {{ request.user }} </h3>
-<a href="{% url 'rabbits_app:create_rabbit' %}">Create</a>
-
-
-{% for key, values in rabbit_list.items %}
-
-<p style="background-color: {{values.1}};" id="btn" onclick="openLinks({{values.0}})">{{key}}</p>
-<a href="{% url 'rabbits_app:edit_rabbit' key %}">Edit</a>
-<a href="{% url 'rabbits_app:delete' key %}">Delete</a>
-{% endfor %}
+<div id="interface-btns-wrap">
     
+    {% if rabbit_list|length == 0  %}
+        <h2 style="text-align: center; width: 100vw; margin-top: 25vh;">You have no buttons</h2>
+        {% else %}
 
-<script>
-      
-</script>
+        {% for key, values in rabbit_list.items %}
+        <div style="border-top: 6px solid {{values.1}};"  class="link-btn-wrap">
+            <h3 id="btn" onclick="openLinks({{values.0}})">{{key}}</h3>
+            <div class="edit-btn-wrap">
+                <a class="edit-btn" style="background-color: {{values.1}};" href="{% url 'rabbits_app:edit_rabbit' key %}">EDIT</a>
+                <a class="edit-btn" style="background-color: {{values.1}};" href="{% url 'rabbits_app:delete' key %}">DELETE</a>
+    
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+        
+    
+</div>
+
+<div id="create-btn-wrap">
+    
+    <a class="nav-btns" href="{% url 'users_app:index' %}">HOME</a>
+    <a id="create-btn" href="{% url 'rabbits_app:create_rabbit' %}">CREATE +</a>
+    <a class="nav-btns" href="{% url 'users_app:logout' %}">LOGOUT</a>
+</div>
+
 
     
 
