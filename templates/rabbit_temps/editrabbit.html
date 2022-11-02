@@ -2,23 +2,30 @@
 
 {% block title %}TaskRabbit - Edit{% endblock %}
 {% block content %}
-<h3>Rabbit edit</h3>
+<div id="greet-title">
+    <h3 class="head-word">EDITING </h3>
+    <h1 class="head-word" style="text-transform:lowercase; margin-bottom: 0px;">{{model_data.0.title}}</h1>
+</div>
 
 
-<form action="{% url 'rabbits_app:edit_rabbit' model_data.0.title %}" method="POST">
+<form id="edit-form" action="{% url 'rabbits_app:edit_rabbit' model_data.0.title %}" method="POST">
     {% csrf_token %}
-    <input type="text" name="title" value="{{model_data.0.title}}">
-    <input type="color" name="color" value="{{color}}">
+    <h4 style="margin-top: 0px;">NAME</h4>
+    <input class="edit-text" type="text" name="title" value="{{model_data.0.title}}">
+    <input type="color" class="color-field" name="color" value="{{color}}">
     
     <div id="create-form">
+        <h4>LINKS</h4>
         {% for link in links  %}
-            <input type="text" name="site-{{forloop.counter}}" value="{{link}}">
+            <input class="edit-text" type="text" name="site-{{forloop.counter}}" value="{{link}}">
         {% endfor %}
     </div>
         
     
-    <button type="submit">submit</button>
+<div id="nav-wrapper">
+    <a id="edit-back" href="{% url 'users_app:interface' %}">GO BACK</a>
+    <button class="form-submit-btn" style="background-color: {{model_data.0.color}};" type="submit">SAVE</button>
+    <div id="add_inp">LINK +</div>
+</div>
 </form>
-<div id="add_inp" style="background-color: rgb(92, 92, 92);">+</div>
-<a href="{% url 'users_app:interface' %}">Go back</a>
 {% endblock %}

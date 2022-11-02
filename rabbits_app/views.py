@@ -19,10 +19,11 @@ def create_rabbit(request):
     elif request.method == 'POST':
 
         link_list = [] # Organized form data into list
+        print(len(request.POST)-2)
         for input in range(len(request.POST)-3): # Allows user to add as many sites as they want
-            link_list.append(request.POST[f'site-{input+1}'])
 
-    
+            link_list.append(request.POST[f'site-{input+1}'])
+        print(link_list)        
         # Checks to see if any feilds empty
         final_links = ""
         for web in link_list:

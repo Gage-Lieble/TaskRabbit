@@ -2,21 +2,23 @@
 
 {% block title %}TaskRabbit - Create{% endblock %}
 {% block content %}
-<h3>Rabbit create</h3>
-<form  action="{% url 'rabbits_app:create_rabbit' %}" method="POST">
+<div id="greet-title">
+    <h3 class="head-word">CREATING</h3>
+    <h1 class="head-word" style="text-transform:lowercase; margin-bottom: 0px;">button</h1>
+</div>
+<form id="edit-form-create" action="{% url 'rabbits_app:create_rabbit' %}" method="POST">
+    <h4>NAME</h4>
 {% csrf_token %}
     {{form}}
     <div id="create-form">
-        <input type="text" name="site-1" placeholder="website" required>
-        <input type="text" name="site-2" placeholder="website">
-        <input type="text" name="site-3" placeholder="website">
-        <input type="text" name="site-4" placeholder="website">
-        <input type="text" name="site-5" placeholder="website">
+        <h4>LINKS</h4>
+        <input class="edit-text" type="text" name="site-1" placeholder="your link" required>
     </div>
-
-    <button type="submit">Create</button>
+    <div id="nav-wrapper">
+        <a id="edit-back" href="{% url 'users_app:interface' %}">GO BACK</a>
+        <button class="form-submit-btn" style="background-color: white; color: black;" type="submit">CREATE</button>
+        <div id="add_inp">LINK +</div>
+    </div>
 </form>
-<div id="add_inp" style="background-color: rgb(92, 92, 92);">+</div>
 
-<a href="{% url 'users_app:interface' %}">Go back</a>
 {% endblock %}
