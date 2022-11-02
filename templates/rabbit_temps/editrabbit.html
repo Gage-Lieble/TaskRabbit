@@ -21,6 +21,7 @@
     {% csrf_token %}
     <h4 style="margin-top: 0px;">NAME</h4>
     <input class="edit-text" type="text" name="title" value="{{model_data.0.title}}">
+    <h4 style="margin-top: 0px;">COLOR</h4>
     <input type="color" class="color-field" name="color" value="{{color}}">
     
     <div id="create-form">
@@ -36,6 +37,8 @@
     <button class="form-submit-btn" style="background-color: {{model_data.0.color}};" type="submit">SAVE</button>
     <div id="add_inp">LINK +</div>
 </div>
+{% comment %} <a class="edit-btn" style="background-color:red;" href="{% url 'rabbits_app:delete' model_data.0.title %}">DELETE</a> {% endcomment %}
 </form>
+
 </body>
 </html>

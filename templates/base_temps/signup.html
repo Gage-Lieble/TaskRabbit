@@ -2,13 +2,19 @@
 
 {% block title %}TaskRabbit - Signup{% endblock %}
 {% block content %}
-
-<h3>Signup</h3>
-
+<div id="greet-title-sign">
+    <h3 class="head-word">SIGN UP</h3>
+</div>
 <form action="{% url 'users_app:signup' %}" method="POST">
     {% csrf_token %}
+    <div id="sign-form-wrap">
         {{ sign_form }}
-        <button type="submit">signup</button>
+        <a href="{% url 'users_app:login' %}" style="color: white; text-decoration: none; font-size: 15px">login instead</a>
+    </div>
+        <div id="nav-wrapper">
+            <a id="edit-back" href="{% url 'users_app:index' %}">GO HOME</a>
+            <button class="form-submit-btn" style="color: black;" type="submit">SIGN UP</button>
+        </div>
     </form>
 
 {% endblock %}

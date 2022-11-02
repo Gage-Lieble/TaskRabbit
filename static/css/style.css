@@ -11,7 +11,9 @@ body {
     width: 100vw;
 }
 
-
+*{
+    font-family: roboto;
+}
 /* INDEX */
 
 #index-title {
@@ -43,6 +45,7 @@ body {
     font-weight: bold;
     color: black;
     width: 40%;
+    max-width: 350px;
 }
 
 
@@ -75,6 +78,7 @@ body {
     width: 100vw;
     background-color: rgb(44, 44, 44);
     padding: 15px 0px 15px 0px;
+    
 }
 #create-btn{
     background-color: white;
@@ -196,10 +200,11 @@ body {
     border: 0px;
     padding: 15px 25px 15px 25px;
     color: white;
-    
+    background-color: white;
+    font-size: 16px;
 }
 .color-field{
-    width: 50px;
+    width: 200px;
     height: 50px;
     border: 0px;
     background-color: white;
@@ -218,13 +223,42 @@ body {
     text-align: center;
 }
 #edit-form-create>input[type=color]{
-    width: 50px;
+    width: 200px;
     height: 50px;
     border: 0px;
     background-color: white;
 }
 #edit-form-create>label{
     display: none;
+}
+
+/* SIGN UP */
+#sign-form-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+#sign-form-wrap>input{
+    padding: 15px 25px 15px 25px;
+    margin-bottom: 15px;
+}
+
+#greet-title-sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+    position: absolute;
+    width: 100%;  
+}
+
+#greet-title-sign>h3{
+    font-size: 30px;
+}
+.head-word{
+    position: absolute;
 }
 @font-face {
     font-family: roboto;
@@ -233,4 +267,32 @@ body {
 @font-face {
     font-family: fancy;
     src: url(/static/fonts/fancy.otf);
+}
+
+
+
+
+
+@media screen and (min-width: 1366px) {
+    #nav-wrapper{
+        justify-content: center;
+    }
+    #nav-wrapper>*{
+        margin: 0px 25px 0px 25px;
+    }
+    #interface-btns-wrap{
+        width: 550px;
+    }
+    #btn{
+        height: 60px;
+    }
+    .edit-btn{
+        width: 100px;
+        text-align: center;
+    }
+    .link-btn-wrap{
+        width: 250px;
+        margin-bottom: 50px;
+        height: 100px;
+    }
 }

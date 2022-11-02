@@ -44,10 +44,10 @@ def signup(request):
             new_user = User.objects.create_user(
                 username = form_data.cleaned_data['username'],
                 password = form_data.cleaned_data['password'],
-                email = form_data.cleaned_data['email']
+             
             )
             sign_user = authenticate(username=form_data.cleaned_data['username'], password=form_data.cleaned_data['password'])
-            login(request, new_user)
+            login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
     return HttpResponseRedirect(reverse('users_app:interface'))
 
 def user_login(request):
