@@ -11,21 +11,25 @@ function openLinks(links){
 
 
 // Adding more links to 1 button
-let addInpBtn = document.getElementById('add_inp')
-let createForm = document.getElementById('create-form')
-let counter = 1
-addInpBtn.addEventListener('click', () =>{
-    console.log('add')
-    counter += 1
-    let newInp = document.createElement("input");
-    newInp.type = "text";
-    newInp.name = "site-" + counter;
-    newInp.placeholder = 'your link'
-    newInp.className = 'edit-text'
-    createForm.appendChild(newInp)
 
-})
-
+function getListLen(len){ // Gathers length of list for counter
+    console.log(`${len} links in list`)
+    let addInpBtn = document.getElementById('add_inp')
+    let createForm = document.getElementById('create-form')
+    let counter = len 
+    addInpBtn.addEventListener('click', () =>{
+        counter += 1
+        console.log('add')
+        let newInp = document.createElement("input");
+        newInp.type = "text";
+        newInp.name = "site-" + counter;
+        newInp.placeholder = 'your link'
+        newInp.className = 'edit-text'
+        createForm.appendChild(newInp)
+    
+    })
+    
+}
 
 
 

@@ -1,7 +1,16 @@
-{% extends 'rabbitbase.html' %}
+{% load static %}
 
-{% block title %}TaskRabbit - Edit{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body onload="getListLen({{links|length}})">
 <div id="greet-title">
     <h3 class="head-word">EDITING </h3>
     <h1 class="head-word" style="text-transform:lowercase; margin-bottom: 0px;">{{model_data.0.title}}</h1>
@@ -28,4 +37,5 @@
     <div id="add_inp">LINK +</div>
 </div>
 </form>
-{% endblock %}
+</body>
+</html>
