@@ -1,15 +1,8 @@
-{% load static %}
+{% extends 'rabbitbase.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/main.js' %}" defer></script>
-</head>
+{% block title %}TaskRabbit - Edit{% endblock %}
+{% block content %}
+
 <body onload="getListLen({{links|length}})">
 <div id="greet-title">
     <h3 class="head-word">EDITING </h3>
@@ -27,7 +20,7 @@
     <div id="create-form">
         <h4>LINKS</h4>
         {% for link in links  %}
-            <input class="edit-text" type="text" name="site-{{forloop.counter}}" value="{{link}}">
+            <input class="edit-text" type="url" name="site-{{forloop.counter}}" value="{{link}}" required>
         {% endfor %}
     </div>
         
@@ -37,8 +30,8 @@
     <button class="form-submit-btn" style="background-color: {{model_data.0.color}};" type="submit">SAVE</button>
     <div id="add_inp">LINK +</div>
 </div>
-{% comment %} <a class="edit-btn" style="background-color:red;" href="{% url 'rabbits_app:delete' model_data.0.title %}">DELETE</a> {% endcomment %}
+<a class="edit-btn" style="background-color:red;" href="{% url 'rabbits_app:delete' model_data.0.title %}">!DELETE BUTTON!</a> 
 </form>
 
 </body>
-</html>
+{% endblock %}

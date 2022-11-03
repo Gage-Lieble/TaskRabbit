@@ -2,17 +2,20 @@
 
 {% block title %}TaskRabbit - Create{% endblock %}
 {% block content %}
-<div id="greet-title">
-    <h3 class="head-word">CREATING</h3>
-    <h1 class="head-word" style="text-transform:lowercase; margin-bottom: 0px;">button</h1>
+
+<body onload="getListLen(1)">
+    
+    <div id="greet-title">
+        <h3 class="head-word">CREATING</h3>
+        <h1 class="head-word" style="text-transform:lowercase; margin-bottom: 0px;">button</h1>
 </div>
 <form id="edit-form-create" action="{% url 'rabbits_app:create_rabbit' %}" method="POST">
     <h4>NAME</h4>
-{% csrf_token %}
+    {% csrf_token %}
     {{form}}
     <div id="create-form">
         <h4>LINKS</h4>
-        <input class="edit-text" type="text" name="site-1" placeholder="your link" required>
+        <input class="edit-text" type="url" name="site-1" placeholder="your link" required>
     </div>
     <div id="nav-wrapper">
         <a id="edit-back" href="{% url 'users_app:interface' %}">GO BACK</a>
@@ -21,4 +24,5 @@
     </div>
 </form>
 
+</body>
 {% endblock %}

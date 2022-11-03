@@ -21,7 +21,7 @@ function getListLen(len){ // Gathers length of list for counter
         counter += 1
         console.log('add')
         let newInp = document.createElement("input");
-        newInp.type = "text";
+        newInp.type = "url";
         newInp.name = "site-" + counter;
         newInp.placeholder = 'your link'
         newInp.className = 'edit-text'
